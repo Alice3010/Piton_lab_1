@@ -26,17 +26,3 @@ plt.show()
 
 
 
-
-
-
-
-
-
-
-  #  print(rand)
-  #  image_index = rand
-  #  print(y_train[image_index])
-   # for i in range(2):
-   #     for j in range(5):
-   # plt.imshow(x_train[image_index], cmap='Greys')
-   # plt.show()
