@@ -1,0 +1,42 @@
+
+import tensorflow as tf
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+(x_train, y_train), (null) = tf.keras.datasets.mnist.load_data()
+
+STROKI = 2
+STOLB = 5
+mnist_len, mnist_len_x, mnist_len_y = x_train.shape
+
+a = np.zeros((STROKI * mnist_len_y, STOLB * mnist_len_x), dtype =np.uint8)
+
+for number in range(10):
+    i_x_train_r = random.randint(0, mnist_len )
+    print(i_x_train_r)
+    for i_x in range(mnist_len_x):
+        for i_y in range(mnist_len_y ):
+            pixel = x_train[i_x_train_r, i_x, i_y]
+            x = (number // STOLB) * (mnist_len_x ) + i_x
+            y = (number % STOLB) * (mnist_len_y ) + i_y
+            a[x,y] = pixel
+
+plt.imshow(a, cmap='Greys')
+plt.show()
+
+
+
+
+
+
+
+
+
+
+  #  print(rand)
+  #  image_index = rand
+  #  print(y_train[image_index])
+   # for i in range(2):
+   #     for j in range(5):
+   # plt.imshow(x_train[image_index], cmap='Greys')
+   # plt.show()
